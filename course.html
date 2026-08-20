@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Irish Hills — Course Crew</title>
+  <title>Irish Hills — Guest Standard</title>
   <style>
     :root { --green: #1b3d2f; --cream: #f4f1ea; --line: #d4cfc4; }
     * { box-sizing: border-box; }
@@ -14,62 +14,50 @@
     .wrap { max-width: 640px; margin: 0 auto; padding: 12px; display: grid; gap: 10px; }
     .card { background: #fff; border: 1px solid var(--line); padding: 12px 14px; }
     .card h2 { margin: 0 0 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #5a5548; }
-    ul { margin: 0; padding-left: 18px; }
-    .row { display: flex; justify-content: space-between; gap: 8px; }
-    .stat { font-weight: 600; }
-    label { display: flex; align-items: flex-start; gap: 8px; margin: 4px 0; cursor: pointer; }
-    textarea { width: 100%; min-height: 72px; border: 1px solid var(--line); padding: 8px; font: inherit; resize: vertical; }
-    .muted { color: #5a5548; font-size: 0.9rem; }
+    ol { margin: 0; padding-left: 18px; }
+    li { margin: 6px 0; }
+    .script { border-left: 3px solid var(--green); padding: 6px 10px; margin: 8px 0; background: #faf8f3; }
     footer { text-align: center; padding: 16px; font-size: 0.75rem; color: #888; }
     a { color: var(--green); }
   </style>
 </head>
 <body>
   <header>
-    <h1>Irish Hills — Course Crew</h1>
+    <h1>Irish Hills — Guest Standard</h1>
     <div id="clock"></div>
   </header>
   <div class="wrap">
     <div class="card">
-      <h2>Priority today</h2>
-      <p class="muted" style="margin:0">— empty</p>
+      <h2>3 steps</h2>
+      <ol>
+        <li>Hello by name</li>
+        <li>Suggest, don't sell</li>
+        <li>Goodbye by name</li>
+      </ol>
     </div>
     <div class="card">
-      <h2>Equipment</h2>
-      <p class="muted" style="margin:0">— empty</p>
+      <h2>Collide order</h2>
+      <ol>
+        <li>Safety</li>
+        <li>Courtesy</li>
+        <li>Look</li>
+        <li>Speed</li>
+      </ol>
     </div>
     <div class="card">
-      <h2>Course status</h2>
-      <p class="muted" style="margin:0">— empty</p>
-    </div>
-    <div class="card">
-      <h2>Crew checklist</h2>
-      <label><input type="checkbox" data-k="fuel"> Fuel / check oils</label>
-      <label><input type="checkbox" data-k="mow"> Fairways mowed</label>
-      <label><input type="checkbox" data-k="roll"> Greens rolled</label>
-      <label><input type="checkbox" data-k="bunk"> Bunkers raked</label>
-      <label><input type="checkbox" data-k="fix"> Repairs done</label>
-      <label><input type="checkbox" data-k="close"> Equipment washed / parked</label>
-    </div>
-    <div class="card">
-      <h2>Crew notes</h2>
-      <textarea id="notes" placeholder="Issues, parts needed, handoff…"></textarea>
+      <h2>This week's suggests</h2>
+      <div class="script">What would y'all like for beverages out on the course today?</div>
+      <div class="script">Anybody else?</div>
+      <div class="script">Emergency nine $15 — loser can pay</div>
     </div>
   </div>
-  <footer>Irish Hills Golf Club · staff only · <a href="shop.html">Shop desk</a></footer>
+  <footer>Irish Hills Golf Club · staff only · <a href="shop.html">TeeSnap Race</a></footer>
   <script>
     function tick() {
       const d = new Date();
       document.getElementById('clock').textContent = d.toLocaleString('en-US', { weekday:'short', month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
     }
     tick(); setInterval(tick, 15000);
-    const notes = document.getElementById('notes');
-    notes.value = localStorage.getItem('ih-course-notes') || '';
-    notes.addEventListener('input', () => localStorage.setItem('ih-course-notes', notes.value));
-    document.querySelectorAll('input[data-k]').forEach(el => {
-      el.checked = localStorage.getItem('ih-course-' + el.dataset.k) === '1';
-      el.addEventListener('change', () => localStorage.setItem('ih-course-' + el.dataset.k, el.checked ? '1' : '0'));
-    });
   </script>
 </body>
 </html>

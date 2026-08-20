@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Irish Hills — Shop Desk</title>
+  <title>Irish Hills — TeeSnap Race</title>
   <style>
     :root { --green: #1b3d2f; --cream: #f4f1ea; --line: #d4cfc4; }
     * { box-sizing: border-box; }
@@ -14,30 +14,46 @@
     .wrap { max-width: 640px; margin: 0 auto; padding: 12px; display: grid; gap: 10px; }
     .card { background: #fff; border: 1px solid var(--line); padding: 12px 14px; }
     .card h2 { margin: 0 0 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #5a5548; }
-    ul { margin: 0; padding-left: 18px; }
+    .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .tile { border: 1px solid var(--line); padding: 10px; }
+    .tile .k { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5a5548; }
+    .tile .v { margin-top: 4px; font-weight: 600; }
+    .tile .n { margin-top: 2px; font-size: 0.85rem; color: #5a5548; }
     .row { display: flex; justify-content: space-between; gap: 8px; }
     .stat { font-weight: 600; }
     label { display: flex; align-items: flex-start; gap: 8px; margin: 4px 0; cursor: pointer; }
     textarea { width: 100%; min-height: 72px; border: 1px solid var(--line); padding: 8px; font: inherit; resize: vertical; }
-    .muted { color: #5a5548; font-size: 0.9rem; }
     footer { text-align: center; padding: 16px; font-size: 0.75rem; color: #888; }
     a { color: var(--green); }
   </style>
 </head>
 <body>
   <header>
-    <h1>Irish Hills — Shop Desk</h1>
+    <h1>Irish Hills — TeeSnap Race</h1>
     <div id="clock"></div>
   </header>
   <div class="wrap">
     <div class="card">
-      <h2>TeeSnap 08/18/2026</h2>
-      <div class="row"><span>Rounds</span><span class="stat">48</span></div>
-      <div class="row"><span>47 cart rentals / 48 rounds</span><span class="stat">47 / 48</span></div>
-      <div class="row"><span>$ per golfer</span><span class="stat">$1,279.38 / 48 rounds</span></div>
-      <div class="row"><span>Cart attach %</span><span>— not loaded</span></div>
-      <div class="row"><span>Emergency nines</span><span>— not loaded</span></div>
-      <div class="row"><span>Winner</span><span>— not loaded</span></div>
+      <h2>TEESNAP RACE - week board</h2>
+      <div class="tiles">
+        <div class="tile">
+          <div class="k">Cart attach %</div>
+          <div class="v">— not loaded</div>
+          <div class="n">47 cart rentals / 48 rounds</div>
+        </div>
+        <div class="tile">
+          <div class="k">$ per golfer</div>
+          <div class="v">$1,279.38 / 48 rounds</div>
+        </div>
+        <div class="tile">
+          <div class="k">Emergency nines</div>
+          <div class="v">— not loaded</div>
+        </div>
+        <div class="tile">
+          <div class="k">Winner</div>
+          <div class="v">— not loaded</div>
+        </div>
+      </div>
     </div>
     <div class="card">
       <h2>Desk checklist</h2>
@@ -53,7 +69,7 @@
     </div>
     <div class="card">
       <h2>Pay</h2>
-      <div class="row"><span>Jaylyn Colopy</span><span class="stat">$757.21</span></div>
+      <div class="row"><span>Devyn Colopy</span><span class="stat">$757.21</span></div>
       <div class="row"><span>Lindsey Conant</span><span class="stat">$309.00</span></div>
       <div class="row"><span>Violet Davis</span><span class="stat">$226.49</span></div>
       <div class="row"><span>Total</span><span class="stat">$1,292.70</span></div>
@@ -64,7 +80,7 @@
       <div class="row"><span>Shop</span><span>same line</span></div>
     </div>
   </div>
-  <footer>Irish Hills Golf Club · staff only · <a href="course.html">Course crew</a></footer>
+  <footer>Irish Hills Golf Club · staff only · <a href="course.html">Guest Standard</a></footer>
   <script>
     function tick() {
       const d = new Date();
